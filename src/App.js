@@ -38,7 +38,9 @@ class App extends React.Component {
       dataList: [
         ...this.state.dataList,
         {
-          characterName: this.state.inputText
+          task: this.state.inputText,
+          id: Date.now(),
+          completed: false
         }
       ],
       inputText: ''
