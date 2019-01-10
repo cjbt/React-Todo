@@ -13,12 +13,14 @@ const TodoList = props => {
           key={task.id}
           onSelect={props.onSelect}
           id={task.id}
+          completed={task.completed}
         />
       ))}
       <TodoForm
         inputText={props.inputText}
         handleChange={props.handleChange}
         submitHandler={props.submitHandler}
+        clearCompleted={props.clearCompleted}
       />
     </div>
   );

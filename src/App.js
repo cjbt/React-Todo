@@ -59,8 +59,15 @@ class App extends React.Component {
     });
   };
 
+  clearCompleted = e => {
+    console.log('hello clear');
+    e.preventDefault();
+    this.setState({
+      dataList: this.state.dataList.filter(data => data.completed === false)
+    });
+  };
+
   render() {
-    console.log(this.state.dataList[0].completed);
     return (
       <div className='App'>
         <TodoList
@@ -69,6 +76,7 @@ class App extends React.Component {
           handleChange={this.handleChange}
           submitHandler={this.submitHandler}
           onSelect={this.onSelect}
+          clearCompleted={this.clearCompleted}
         />
       </div>
     );
