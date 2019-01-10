@@ -47,9 +47,20 @@ class App extends React.Component {
     });
   };
 
-  onSelect = e => {};
+  onSelect = id => {
+    this.setState({
+      dataList: this.state.dataList.map(data => {
+        if (data.id === id) {
+          return { ...data, completed: !data.completed };
+        } else {
+          return data;
+        }
+      })
+    });
+  };
 
   render() {
+    console.log(this.state.dataList[0].completed);
     return (
       <div className='App'>
         <TodoList

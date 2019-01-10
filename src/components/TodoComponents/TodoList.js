@@ -7,8 +7,13 @@ import TodoForm from './TodoForm';
 const TodoList = props => {
   return (
     <div>
-      {props.dataList.map(task => (
-        <Todo task={task.task} key={task.id} />
+      {props.dataList.map((task, i) => (
+        <Todo
+          task={task.task}
+          key={task.id}
+          onSelect={props.onSelect}
+          id={task.id}
+        />
       ))}
       <TodoForm
         inputText={props.inputText}
